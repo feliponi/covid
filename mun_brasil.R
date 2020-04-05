@@ -1,4 +1,4 @@
-#1 carregando os dados 
+#1 Loading data 
 library(readr)
 tabela1301 <- read_delim("tabela1301.csv", 
                          ";", escape_double = FALSE, col_types = cols(Area = col_number(), 
@@ -15,7 +15,7 @@ names(tabela1301)
 
 library(ggplot2)
 
-#log para normalizar
+#log to normalize columns Density and Covid Cases
 gg <- ggplot(mun, aes(x=log(CasosCovid19), y=log(Densidade), color=NivelDensidade)) + geom_point() + labs(title="", x="Casos Covid-19", y="Densidade")
 
 print(gg)
