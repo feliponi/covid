@@ -13,12 +13,10 @@ attach(tabela1301)
 
 names(tabela1301)
 
-mun<-tabela1301
-
 library(ggplot2)
 
 #log para normalizar
-gg <- ggplot(mun, aes(x=log(mun$CasosCovid19), y=log(mun$Densidade), color=mun$NivelDensidade)) + geom_point() + labs(title="", x="Casos Covid-19", y="Densidade")  # add axis lables and plot title.
+gg <- ggplot(mun, aes(x=log(CasosCovid19), y=log(Densidade), color=NivelDensidade)) + geom_point() + labs(title="", x="Casos Covid-19", y="Densidade")
 
 print(gg)
 
